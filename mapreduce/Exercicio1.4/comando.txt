@@ -1,0 +1,1 @@
+mapred streaming -files mapper_max.py,reducer_max.py -input PURCHASE/purchase.txt -output MAXABSOLUTO -mapper mapper_max.py -reducer reducer_max.py
