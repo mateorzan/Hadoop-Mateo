@@ -1,50 +1,53 @@
-# Hadoop-Mateo
+# Hadoop-Mateo | Proyecto MapReduce
 
+## Descripción
+Este repositorio contiene la implementación de varios ejercicios basados en MapReduce. Cada ejercicio está organizado en carpetas individuales y utiliza scripts `mapper` y `reducer` para procesar los datos.
 
-# Proyecto MapReduce
+## Estructura del Proyecto
 
-Este repositorio contiene implementaciones de algoritmos MapReduce para procesar archivos de datos distribuidos. Cada ejercicio implementa un objetivo específico utilizando scripts de **mapper** y **reducer**.
-
----
-
-## **Estructura del Proyecto**
-
-``` 
+```plaintext
 mapreduce/
-|
-├── exercicio1_1/        # Descarta líneas con formato incorrecto
-│   ├── mapper.py        # Código del mapper
-│   ├── reducer.py       # Código del reducer
-│   └── mini_purchases.txt # Archivo de prueba
 │
-├── exercicio1_2/        # Total de ventas por categoría
-│   ├── mapper.py
-│   ├── reducer.py
-│   └── mini_purchases.txt
+├── Exercicio1.1/                  # Ejercicio 1.1: Descartar líneas con formato incorrecto
+│   ├── DESCARTEFORMATO/           
+│   │   ├── comando.txt
+│   │   ├── mapper.py
 │
-├── exercicio1_3/        # Venta más alta por tipo de pago
-│   ├── mapper.py
-│   ├── reducer.py
-│   └── mini_purchases.txt
+├── Exercicio1.2/                  # Ejercicio 1.2: Total de ventas por categoría
+│   ├── COMPRASXCATEGORIA/         
+│   │   ├── comando.txt
+│   │   ├── mapper2.py
+│   │   ├── reducer2.py
+│   │   └── mini_purchases.txt
 │
-├── exercicio1_4/        # Máximo absoluto de las ventas
-│   ├── mapper.py
-│   ├── reducer.py
-│   └── mini_purchases.txt
+├── Exercicio1.3/                  # Ejercicio 1.3: Venta más alta por tipo de pago
+│   ├── VENTAMASALTA/              
+│   │   ├── comando.txt
+│   │   ├── mapper_max.py
+│   │   └── reducer_max.py
 │
-├── exercicio1_5/        # Total de todas las ventas
-│   ├── mapper.py
-│   ├── reducer.py
-│   └── mini_purchases.txt
+├── Exercicio1.4/                  # Ejercicio 1.4: Máximo absoluto de las ventas
+│   ├── MAXABSOLUTO/               
+│   │   ├── comando.txt
+│   │   ├── mapper_max.py
+│   │   └── reducer_max.py
 │
-└── README.md            # Documentación del proyecto
-```
+├── Exercicio1.5/                  # Ejercicio 1.5: Total de ventas
+│   ├── TOTALVENTAS/               
+│   │   ├── comando.txt
+│   │   ├── mapper_max.py
+│   │   ├── reducer_max.py
+│   │   └── mini_purchases2.txt
+│
+├── .gitignore                     # Archivo para excluir archivos no deseados
+├── LICENSE                        # Licencia del proyecto
+└── README.md                      # Documentación del proyecto
 
 ---
 
 ## **Requisitos Previos**
 
-1. **Python 3** instalado.
+1. **Python** instalado.
 2. **Hadoop** configurado (para ejecución en clúster).
 3. Permisos para ejecutar scripts:
    ```bash
@@ -78,7 +81,7 @@ Para probar el código localmente con un archivo pequeño:
 
 1. **Subir los archivos de datos a HDFS:**
    ```bash
-   hdfs dfs -put purchases.txt
+   hdfs dfs -put PURCHASE/purchases.txt
    ```
 
 2. **Lanzar el trabajo MapReduce:**
@@ -92,7 +95,9 @@ Para probar el código localmente con un archivo pequeño:
 
 3. **Verificar los resultados en HDFS:**
    ```bash
-   hdfs dfs -cat nombre_salida/part-00000
+   hdfs dfs -get nombre_salida
+   cd nombre_salida
+   cat *
    ```
 
 ---
@@ -125,13 +130,7 @@ Para probar el código localmente con un archivo pequeño:
 
 ---
 
-## **Enlace al Repositorio**
-
-Este proyecto está disponible en: **[Tu enlace aquí]**
-
----
-
 ## **Créditos**
 
-Desarrollado por [Tu Nombre] para comprender el funcionamiento del trabajo distribuido usando MapReduce en Hadoop.
+Desarrollado por Mateo para comprender el funcionamiento del trabajo distribuido usando MapReduce en Hadoop.
 
